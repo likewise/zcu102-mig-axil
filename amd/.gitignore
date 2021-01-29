@@ -1,0 +1,19 @@
+# ignore block diagram files, they are regenerated
+bd/processing_system/*
+# do not ignore bd/<name>/hdl/ for block diagram wrappers
+!bd/*/hdl/**
+
+#*/*.cache
+#*/*.hw
+#*/*.ip_user_files
+#*/*.runs
+#*/*.sdk
+#*/*.sim
+#*/*.srcs
+#*/*.xpr
+
+# do not ignore <project-name>/recreate.tcl
+!*/recreate.tcl
+
+#vivado*.jou
+#vivado*.log

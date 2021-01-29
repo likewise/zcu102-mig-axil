@@ -1,0 +1,20 @@
+# We only store the minimal amount of source files required to rebuild the projects.
+
+# Ignore Vivado project files (instead we use write_project_tcl) in all subdirectories.
+# Please do backup Vivado projects, but not to this GIT repository!
+*.cache/
+*.hw/
+*.ip_user_files/
+*.runs/
+*.sdk/
+*.sim/
+*.srcs/
+*.xpr
+
+# Ignore Vivado journals and logs in all subdirectories.
+vivado*.jou
+vivado*.log
+
+# Ignore Yocto / OpenEmbedded / PetaLinux logs in all subdirectories.
+oe-logs
+oe-workdir
