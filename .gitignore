@@ -14,6 +14,8 @@
 # Ignore Vivado journals and logs in all subdirectories.
 vivado*.jou
 vivado*.log
+vivado*.str
+vivado*.debug
 
 # Ignore Yocto / OpenEmbedded / PetaLinux logs in all subdirectories.
 oe-logs

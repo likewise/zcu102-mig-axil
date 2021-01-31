@@ -3,6 +3,8 @@ bd/processing_system/*
 # do not ignore bd/<name>/hdl/ for block diagram wrappers
 !bd/*/hdl/**
 
+zcu102-blinky
+
 #*/*.cache
 #*/*.hw
 #*/*.ip_user_files

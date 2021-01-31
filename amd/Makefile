@@ -1,5 +1,5 @@
 .ONESHELL:
-.PHONY: export clean mrproper
+.PHONY: export clean mrproper monitor
 
 # we use bash's shell expansion in clean
 SHELL:=bash
@@ -41,8 +41,17 @@ implement: $(PROJECT)/$(PROJECT).xpr
 	# build project
 	vivado -mode batch -source tcl/implement.tcl $(PROJECT)/$(PROJECT).xpr
 
+bitstream: #$(PROJECT)/$(PROJECT).runs/impl_1/$(PROJECT).bit
+	vivado -mode batch -source tcl/bitstream.tcl $(PROJECT)/$(PROJECT).xpr
+
+handoff: $(PROJECT)/$(PROJECT).xpr
+	vivado -mode batch -source tcl/xsa.tcl $(PROJECT)/$(PROJECT).xpr
+
 clean:
 	rm -rfv vivado{_*,}{.backup,}.{jou,log,str}
 
 mrproper: clean
 	rm -rf $(PROJECT)/$(PROJECT).* $(PROJECT)/vivado{_*,}{.backup,}.{jou,log,str} $(PROJECT)/.Xil
+
+monitor:
+	tail -F zcu102-blinky/zcu102-blinky.runs/{synth,impl}_1/runme.log
