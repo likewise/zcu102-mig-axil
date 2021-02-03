@@ -1,7 +1,5 @@
 # ignore block diagram files, they are regenerated
-bd/processing_system/*
-# do not ignore bd/<name>/hdl/ for block diagram wrappers
-!bd/*/hdl/**
+bd/processing_system/!hdl*
 
 zcu102-blinky
 
